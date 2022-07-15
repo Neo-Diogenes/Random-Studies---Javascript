@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Informe um número entre 10 e 20</p>
+    <input type="text" class="numero">
+    <button onclick="verifica()">Verificar</button>
+    <p class="msg"></p>
+</body>
+<script>
+
+function verifica(){
+    var x = document.querySelector('.numero').value;
+
+
+    try{
+    if(x == '') throw 'Informe um valor';
+    if(isNaN(x)) throw 'Você precisa informar um número';
+    x = Number(x);
+    if(x < 10 || x > 20) throw 'Informe um número entre 10 e 20'; 
+
+
+    document.querySelector('.msg').innerText = 'Perfeito, valor '+x;
+    } catch(erro){
+        document.querySelector('.msg').innerText= 'Erro: '+ erro;
+    } finally {
+        document.querySelector('.numero').value = '';
+    }
+
+}
+
+
+
+
+
+
+</script>
+</html>

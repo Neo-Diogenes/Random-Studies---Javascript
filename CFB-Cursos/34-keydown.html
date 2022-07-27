@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> .div{
+        width: 100px;
+        height: 100px;
+        border: 2px solid #000;
+        background:red;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }</style>
+</head>
+<body>
+    <div class="div"></div>
+</body>
+
+<script>
+
+var px=0;
+var py=0;
+var obj;
+
+document.addEventListener("keydown",move)
+
+    
+    function move(){
+    var obj=document.querySelector(".div");
+    var tecla =event.keyCode;
+    if(tecla==37){
+        px-=50;
+        obj.style.left=px+"px";
+    } else if(tecla==38){
+        py-=50;
+        obj.style.top=py+"px";
+    } else if(tecla==39){
+        px+=50;
+        obj.style.left=px+"px";
+    } else if(tecla==40){
+        py+=50;
+        obj.style.top=py+"px";
+    } else if(tecla == 13){
+        obj.style.backgroundColor="#FFF"
+        alert("Evento Removido");
+        document.removeEventListener("keydown",move)
+    }
+
+};
+
+// nao consegui remover o evento com função anonima
+
+function addClick(){
+    document.addEventListener("keydown",move)
+    obj.style.backgroundColor="#f00";
+}
+
+function iniciar(){
+    obj = document.querySelector(".div");
+    obj.addEventListener("click",addClick)
+}
+
+iniciar()
+
+</script>
+
+
+</html>

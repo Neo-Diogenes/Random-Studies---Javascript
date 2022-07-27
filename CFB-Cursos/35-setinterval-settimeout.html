@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> .div{
+        width: 100px;
+        height: 100px;
+        border: 2px solid #000;
+        background:red;
+
+    }</style>
+</head>
+<body>
+
+<div class="div">
+<br/></div>
+<button class="bt1">Iniciar</button>
+<button class="bt2">Parar</button>
+   
+</body>
+<script>
+
+
+var tmp;
+
+function mudaCor(){
+    var obj = document.querySelector(".div");
+    var r = Math.floor(Math.random()*255)
+    var g = Math.floor(Math.random()*255)
+    var b = Math.floor(Math.random()*255)
+
+    obj.style.backgroundColor="rgb("+r+","+g+","+b+")";
+}
+
+
+function iniciar(){
+    tmp = setInterval(mudaCor, 100)
+}
+
+function parar(){
+    clearInterval(tmp)
+}
+
+document.querySelector(".bt1").addEventListener("click",iniciar)
+
+document.querySelector(".bt2").addEventListener("click",parar)
+
+
+
+</script>
+</html>

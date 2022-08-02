@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="teste1">
+        <table border="1" class="teste">
+                <tr class="tabela">
+                    
+                        <th>teste</th>
+                        <th>teste</th>
+                        <th>teste</th>
+                        <th>teste</th>
+                </tr>
+                <td>
+                    teste
+                </td>
+                <td>
+                    teste
+                </td>
+                <td>
+                    teste
+                </td>
+                <td>
+                    teste
+                </td>
+                
+            
+          
+        </table>
+    </div>
+</body>
+<script>
+    var tab = document.querySelector(".teste")
+    var tab1 = document.querySelector(".teste1")
+    var tabela = document.querySelector(".tabela")
+    var celula = document.getElementsByTagName("th")
+
+
+   var aplicacao = document.createElement('td');
+
+   
+
+   aplicacao.innerHTML = "teste"
+
+   tabela.appendChild(aplicacao)
+
+
+   for(i=0;i<celula.length;i++){
+    celula[i].style.color = "#FF0000"
+   }
+
+
+</script>
+</html>

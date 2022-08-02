@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolar</title>
+</head>
+<body>
+    <div class="container">
+Cotação do Dolar atual: <input type="number" class="cotacao"></br></br>
+
+Valor a ser convertido para real: <input type="number" class="valor"></br>
+
+<button onclick="converter()">Resultado</button>
+
+    </div>
+
+    <div class="res">
+
+    </div>
+</body>
+<script>
+ 
+function converter(){
+
+var cotacao = document.querySelector(".cotacao");
+
+var valor = document.querySelector(".valor")
+
+var res =document.querySelector(".res")
+
+var cot = parseFloat(Math.round(cotacao.value)).toFixed(3)
+
+var val = parseFloat(Math.round(valor.value)).toFixed(3)
+
+var calculo = val/cot
+
+res.innerHTML = `${calculo} dolares `
+}
+
+
+
+</script>
+</html>

@@ -15,6 +15,7 @@ if(num.value.length == 0){
         let item = document.createElement('option')
         item.innerText = `${n} x ${i} = ${n*i}`
         tab.appendChild(item)
+        
 
 
 
